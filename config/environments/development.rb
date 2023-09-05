@@ -41,12 +41,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'gmail.com', protocol: 'https' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              'email-smtp.us-east-1.amazonaws.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            'j0s3jzr@gmail.com',
-    password:             'rczvjgzfhewvdiyb',
-    authentication:       'plain',
+    user_name:            'AKIAXMAPCONIDG53VFV7',
+    password:             'BEBOeenFcpawFqUH1eHn5Y8PfBVdKQdgv0Yl+fIaps1b',
+    authentication:       :plain,
     enable_starttls_auto: true,
     open_timeout:         5,
     read_timeout:         5 }
