@@ -38,21 +38,21 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
 
-  config.action_mailer.default_url_options = { host: 'gmail.com', protocol: 'https' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'email-smtp.us-east-1.amazonaws.com',
+    address:              Rails.application.credentials.dig(:aws, :addres),
     port:                 587,
-    domain:               'gmail.com',
-    user_name:            'AKIAXMAPCONIDG53VFV7',
-    password:             'BEBOeenFcpawFqUH1eHn5Y8PfBVdKQdgv0Yl+fIaps1b',
+    # domain:               'gmail.com',
+    user_name:            Rails.application.credentials.dig(:aws, :username),
+    password:             Rails.application.credentials.dig(:aws, :password),
     authentication:       :plain,
     enable_starttls_auto: true,
     open_timeout:         5,
     read_timeout:         5 }
     config.action_mailer.perform_deliveries = true
     config.action_mailer.raise_delivery_errors = true
-    config.action_mailer.default_options = {from: 'no-reply@example.com'}
+    # config.action_mailer.default_options = {from: 'no-reply@example.com'}
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
