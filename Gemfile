@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 gem 'omniauth-github', '~> 2.0.0'
 gem "omniauth-rails_csrf_protection"
+gem 'omniauth-google-oauth2'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
